@@ -22,7 +22,7 @@ class PractiseFind: NSObject {
         
 //        testFindMaxDivideMultiple();
         
-        testFindMaxMultipleUseGreedy()
+//        testFindMaxMultipleUseGreedy()
     }
     
     // MARK: 减绳子 -- 动态规划

@@ -21,6 +21,8 @@ class ViewController: UIViewController {
         //
 //        PractiseValue()
         
+        PractiseBit()
+        
     }
     
 
