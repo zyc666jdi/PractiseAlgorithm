@@ -12,7 +12,76 @@ class PractiseBit: NSObject {
     
     override init() {
         super.init()
-        testCalculateNumberOf1()
+//        testCalculateNumberOf1()
+        
+        testMyPow()
+    }
+    
+   // 求一个数的n次方,pow
+    func testMyPow(){
+        testCaseMyPow(base: 2, exponent: 3, expect: 8)
+        testCaseMyPow(base: -2, exponent: 3, expect: -8)
+        testCaseMyPow(base: 2, exponent: -3, expect: 0.125)
+        testCaseMyPow(base: 2, exponent: 0, expect: 1)
+        testCaseMyPow(base: 0, exponent: 0, expect: 1)
+        testCaseMyPow(base: 0, exponent: -4, expect: 1)
+    }
+    
+    func testCaseMyPow(base:Int,exponent:Int,expect:Double) {
+        do {
+            let result =  try myPow(base: base, exponent: exponent)
+            if result == expect {
+                print("testCaseMyPow","_success",String(base),String(exponent));
+            } else {
+                print("testCaseMyPow","_failure",String(base),String(exponent),"current",String(result));
+                
+            }
+        } catch let err as NSError {
+            print(err.localizedDescription)
+        }
+    }
+    
+    func myPow(base:Int,exponent:Int) throws -> Double {
+        var checkBase = base
+        var checkExponent = exponent
+        if base == 0 {
+            if exponent >= 0 {
+                return 1 
+            } else {
+                throw NSError.init(domain: "非法输入", code: 1, userInfo: nil)
+            }
+        } else if (base < 0) {
+            checkBase = -base;
+        }
+        if exponent < 0 {
+            checkExponent = -exponent
+        }
+        let result = myPowCore(base: checkBase, exponent: checkExponent)
+        if base < 0 {
+            return Double(-result)
+        }
+        if exponent < 0 {
+            return 1.0 / Double(result)
+        }
+        return Double(result)
+    }
+    
+    // 使用for循环,计算次数比较多,可以使用二分法,每次使计算次数减少一半
+    // >> 比 除法效率高
+    // & 可以判断一个数是奇数还是偶数
+    func myPowCore(base:Int,exponent:Int) -> Int {
+        var result = 1
+        if exponent == 0 {
+            return 1
+        } else if exponent == 1 {
+            return base
+        }
+        let half = myPowCore(base: base, exponent: exponent >> 1)
+        result *= half * half
+        if exponent & 0x01 == 1 {
+            result *= base
+        }
+        return result
     }
     
     // 输入一个整数,输出一个二进制表示1的个数,不能用字符串.
