@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7B4A198524AE429D008521E0 /* PractiseBit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B4A198424AE429D008521E0 /* PractiseBit.swift */; };
+		7B4A198524AE429D008521E0 /* PractiseNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B4A198424AE429D008521E0 /* PractiseNumber.swift */; };
 		B786E7B0248F0F3F00DE1285 /* PractiseValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B786E7AF248F0F3F00DE1285 /* PractiseValue.swift */; };
 		B7B173AC23AD121400B0729C /* PractiseFind.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B173AB23AD121400B0729C /* PractiseFind.swift */; };
 		B7B173AF23AE388200B0729C /* practiseString.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B173AE23AE388100B0729C /* practiseString.swift */; };
@@ -35,7 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		7B4A198424AE429D008521E0 /* PractiseBit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PractiseBit.swift; sourceTree = "<group>"; };
+		7B4A198424AE429D008521E0 /* PractiseNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PractiseNumber.swift; sourceTree = "<group>"; };
 		B786E7AF248F0F3F00DE1285 /* PractiseValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PractiseValue.swift; sourceTree = "<group>"; };
 		B7B173AB23AD121400B0729C /* PractiseFind.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PractiseFind.swift; sourceTree = "<group>"; };
 		B7B173AE23AE388100B0729C /* practiseString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = practiseString.swift; sourceTree = "<group>"; };
@@ -74,12 +74,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		7B4A198324AE4274008521E0 /* Bit */ = {
+		7B4A198324AE4274008521E0 /* Number */ = {
 			isa = PBXGroup;
 			children = (
-				7B4A198424AE429D008521E0 /* PractiseBit.swift */,
+				7B4A198424AE429D008521E0 /* PractiseNumber.swift */,
 			);
-			path = Bit;
+			path = Number;
 			sourceTree = "<group>";
 		};
 		B786E7AE248F0EE600DE1285 /* Value */ = {
@@ -151,7 +151,7 @@
 		B7DC12D923A9EE47006DCF9B /* PractiseAlgorithm */ = {
 			isa = PBXGroup;
 			children = (
-				7B4A198324AE4274008521E0 /* Bit */,
+				7B4A198324AE4274008521E0 /* Number */,
 				B786E7AE248F0EE600DE1285 /* Value */,
 				B7DC12FC23A9EE5F006DCF9B /* Sort */,
 				B7B173AA23AD11D200B0729C /* find */,
@@ -293,7 +293,7 @@
 				B786E7B0248F0F3F00DE1285 /* PractiseValue.swift in Sources */,
 				B7DC12DF23A9EE47006DCF9B /* ViewController.swift in Sources */,
 				B7B173B523B36DA500B0729C /* PractiseBinaryTree.swift in Sources */,
-				7B4A198524AE429D008521E0 /* PractiseBit.swift in Sources */,
+				7B4A198524AE429D008521E0 /* PractiseNumber.swift in Sources */,
 				B7DC12DB23A9EE47006DCF9B /* AppDelegate.swift in Sources */,
 				B7B173BA23B4AA4E00B0729C /* PractiseStackQueue.swift in Sources */,
 				B7DC12DD23A9EE47006DCF9B /* SceneDelegate.swift in Sources */,

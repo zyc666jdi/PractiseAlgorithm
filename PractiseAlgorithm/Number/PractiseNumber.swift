@@ -8,14 +8,74 @@
 
 import UIKit
 
-class PractiseBit: NSObject {
+class PractiseNumber: NSObject {
     
     override init() {
         super.init()
 //        testCalculateNumberOf1()
+        getAllNumber(n: 3)
         
-        testMyPow()
+//        testMyPow()
     }
+    
+    
+    // MARK: - 求 打印从1到 n 位数 的所有值
+    // 数值可能很大,超过最大的长整形数
+    //  https://github.com/zhulintao/CodingInterviewChinese2/blob/master/17_Print1ToMaxOfNDigits/Print1ToMaxOfNDigits.cpp
+    // 方法一:字符转换成整数,相加
+    func getAllNumber(n:Int) {
+        if n <= 0 {
+            return
+        }
+        var array = Array(repeating: "0", count: n)
+        var overFlow = false;
+        var change = 0;
+        var resultArray:[[String]] = []
+        while overFlow == false {
+            for i in  (0...array.count-1).reversed(){
+                guard var result = Int(array[i]) else {return}
+                if i == array.count  - 1 {
+                    result += 1
+                } else {
+                    result += change
+                }
+                if  result >= 10 {
+                    change = 1
+                    result -= 10
+                    array[i] = String(result)
+                    if i == 0 {
+                        overFlow = true
+                        break;
+                    }
+                } else {
+                    array[i] = String(result)
+                    resultArray.append(array)
+                    break;
+                }
+            }
+        }
+        for arr in resultArray {
+            printNumber(arr: arr)
+        }
+        
+        
+    }
+    
+    func printNumber(arr:[String]) {
+        var startPrint = false;
+        var dscStr = ""
+        for (index,str) in arr.enumerated() {
+            if  str != "0" || index == 0 {
+                startPrint = true
+            }
+            if startPrint == true {
+                dscStr.append(str)
+            }
+        }
+        print(dscStr)
+    }
+    
+    
     
    // 求一个数的n次方,pow
     func testMyPow(){
