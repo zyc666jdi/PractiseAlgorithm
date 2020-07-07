@@ -13,7 +13,8 @@ class PractiseNumber: NSObject {
     override init() {
         super.init()
 //        testCalculateNumberOf1()
-        getAllNumber(n: 3)
+//        getAllNumber(n: 3)
+          getAllNumber(n: 3)
         
 //        testMyPow()
     }
@@ -73,6 +74,23 @@ class PractiseNumber: NSObject {
             }
         }
         print(dscStr)
+    }
+    // 方法2 : 全排列
+    func getAllNumberWithSort(n:Int){
+        var arr = Array(repeating: "0", count: n)
+        getAllNumberWithSortCore(arr: &arr, index: 0, maxIndex: n)
+        
+    }
+    
+    func getAllNumberWithSortCore(arr:inout [String] , index:Int,maxIndex:Int) {
+        if  index >= maxIndex {
+            printNumber(arr: arr)
+            return;
+        }
+        for i in 0...9 {
+            arr[index] = String(i)
+            getAllNumberWithSortCore(arr: &arr, index: index + 1 , maxIndex: maxIndex)
+        }
     }
     
     
