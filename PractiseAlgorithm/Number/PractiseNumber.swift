@@ -14,7 +14,7 @@ class PractiseNumber: NSObject {
         super.init()
 //        testCalculateNumberOf1()
 //        getAllNumber(n: 3)
-          getAllNumber(n: 3)
+//          getAllNumber(n: 3)
         
 //        testMyPow()
     }
