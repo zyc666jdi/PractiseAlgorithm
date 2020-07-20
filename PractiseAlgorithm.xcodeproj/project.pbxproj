@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		7B4A198524AE429D008521E0 /* PractiseNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B4A198424AE429D008521E0 /* PractiseNumber.swift */; };
+		7BE2FC8024C60856002767CD /* IMG_4154.GIF in Resources */ = {isa = PBXBuildFile; fileRef = 7BE2FC7E24C60856002767CD /* IMG_4154.GIF */; };
+		7BE2FC8124C60856002767CD /* IMG_4152.GIF in Resources */ = {isa = PBXBuildFile; fileRef = 7BE2FC7F24C60856002767CD /* IMG_4152.GIF */; };
 		B786E7B0248F0F3F00DE1285 /* PractiseValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B786E7AF248F0F3F00DE1285 /* PractiseValue.swift */; };
 		B7B173AC23AD121400B0729C /* PractiseFind.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B173AB23AD121400B0729C /* PractiseFind.swift */; };
 		B7B173AF23AE388200B0729C /* practiseString.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B173AE23AE388100B0729C /* practiseString.swift */; };
@@ -36,6 +38,8 @@
 
 /* Begin PBXFileReference section */
 		7B4A198424AE429D008521E0 /* PractiseNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PractiseNumber.swift; sourceTree = "<group>"; };
+		7BE2FC7E24C60856002767CD /* IMG_4154.GIF */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = IMG_4154.GIF; sourceTree = "<group>"; };
+		7BE2FC7F24C60856002767CD /* IMG_4152.GIF */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = IMG_4152.GIF; sourceTree = "<group>"; };
 		B786E7AF248F0F3F00DE1285 /* PractiseValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PractiseValue.swift; sourceTree = "<group>"; };
 		B7B173AB23AD121400B0729C /* PractiseFind.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PractiseFind.swift; sourceTree = "<group>"; };
 		B7B173AE23AE388100B0729C /* practiseString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = practiseString.swift; sourceTree = "<group>"; };
@@ -80,6 +84,15 @@
 				7B4A198424AE429D008521E0 /* PractiseNumber.swift */,
 			);
 			path = Number;
+			sourceTree = "<group>";
+		};
+		7BE2FC7D24C60829002767CD /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				7BE2FC7F24C60856002767CD /* IMG_4152.GIF */,
+				7BE2FC7E24C60856002767CD /* IMG_4154.GIF */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		B786E7AE248F0EE600DE1285 /* Value */ = {
@@ -133,6 +146,7 @@
 		B7DC12CE23A9EE47006DCF9B = {
 			isa = PBXGroup;
 			children = (
+				7BE2FC7D24C60829002767CD /* Resources */,
 				B7DC12D923A9EE47006DCF9B /* PractiseAlgorithm */,
 				B7DC12F023A9EE48006DCF9B /* PractiseAlgorithmTests */,
 				B7DC12D823A9EE47006DCF9B /* Products */,
@@ -270,6 +284,8 @@
 			files = (
 				B7DC12E723A9EE48006DCF9B /* LaunchScreen.storyboard in Resources */,
 				B7DC12E423A9EE48006DCF9B /* Assets.xcassets in Resources */,
+				7BE2FC8024C60856002767CD /* IMG_4154.GIF in Resources */,
+				7BE2FC8124C60856002767CD /* IMG_4152.GIF in Resources */,
 				B7DC12E223A9EE47006DCF9B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
