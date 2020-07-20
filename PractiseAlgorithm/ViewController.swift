@@ -15,13 +15,13 @@ class ViewController: UIViewController {
        //
 //        PractiseSort()
         //
-        PractiseFind()
+//        PractiseFind()
         //
-//        practiseString()
+        practiseString()
         //
 //        PractiseValue()
         
-        PractiseNumber()
+//        PractiseNumber()
         
     }
     

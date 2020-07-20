@@ -14,8 +14,54 @@ class practiseString: NSObject {
         super.init()
         //        let string = self.replaceString(str: "We are happy")
         //        print(string)
-        self.sortString(str: "aabb")
+//        self.sortString(str: "aabb")
+        testMatch();
     }
+    
+    // MARK: 正则表达式
+    // 判断字符串与模式是否匹配,.代表任意的字符串,*代表前面的字符可以出现任意次数
+    // https://github.com/zhulintao/CodingInterviewChinese2/blob/master/19_RegularExpressionsMatching/RegularExpressions.cpp
+    func testMatch(){
+        testCaseMatch(str: "aaa", pattern: "a.a", expect: true)
+        testCaseMatch(str: "aaa", pattern: "ab*ac*a", expect: true)
+        testCaseMatch(str: "aaa", pattern: "ab*a", expect: false)
+    }
+    
+    func testCaseMatch(str:String,pattern:String,expect:Bool) {
+        let result =  match(str: str, pattern: pattern)
+        if result != expect {
+            debugPrint("testCaseMatch_failure",String(result))
+        } else {
+            debugPrint("testCaseMatch_Pass",String(expect))
+        }
+    }
+    
+    func match(str:String,pattern:String) ->Bool {
+        return   matchCore(str: str, pattern: pattern, left: 0, right: 0)
+    }
+    
+    func matchCore(str:String,pattern:String,left:Int,right:Int) ->Bool {
+        if left == str.length , right == pattern.length {
+            return true
+        } else if left >= str.count || right >= pattern.count {
+            return false;
+        }
+        if pattern[right + 1] == "*" {
+            if pattern[right] == "." || str[left] == pattern[right] {
+                return  matchCore(str: str, pattern: pattern, left: left, right: right + 2) ||  matchCore(str: str, pattern: pattern, left: left + 1, right: right + 2) ||  matchCore(str: str, pattern: pattern, left: left + 1, right: right)
+            } else {
+                return  matchCore(str: str, pattern: pattern, left: left, right: right + 2)
+            }
+        } else {
+            if pattern[right] == "." || str[left] == pattern[right] {
+                return  matchCore(str: str, pattern: pattern, left: left + 1, right: right + 1)
+            } else {
+                return false;
+            }
+        }
+    }
+    
+    
     
     // 将"We are happy"中的空格替换为"%20"
     func replaceString(str:String) -> String {
@@ -78,5 +124,42 @@ class practiseString: NSObject {
         }
         print("handle",handleArray)
         return handleArray;
+    }
+}
+
+
+// MARK: - Tool 字符串截取
+// swift 5.2
+//let str = "abcdef"
+//str[1 ..< 3] // returns "bc"
+//str[5] // returns "f"
+//str[80] // returns ""
+//str.substring(fromIndex: 3) // returns "def"
+//str.substring(toIndex: str.length - 2) // returns "abcd"
+
+extension String {
+    
+    var length: Int {
+        return count
+    }
+
+    subscript (i: Int) -> String {
+        return self[i ..< i + 1]
+    }
+
+    func substring(fromIndex: Int) -> String {
+        return self[min(fromIndex, length) ..< length]
+    }
+
+    func substring(toIndex: Int) -> String {
+        return self[0 ..< max(0, toIndex)]
+    }
+
+    subscript (r: Range<Int>) -> String {
+        let range = Range(uncheckedBounds: (lower: max(0, min(length, r.lowerBound)),
+                                            upper: min(length, max(0, r.upperBound))))
+        let start = index(startIndex, offsetBy: range.lowerBound)
+        let end = index(start, offsetBy: range.upperBound - range.lowerBound)
+        return String(self[start ..< end])
     }
 }

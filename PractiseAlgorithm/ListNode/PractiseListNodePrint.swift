@@ -29,28 +29,28 @@ class practiseListNode: NSObject {
     
     //MARK: 在一个排序的链表中,删除重复的节点
     // https://github.com/zhulintao/CodingInterviewChinese2/blob/master/18_02_DeleteDuplicatedNode/DeleteDuplicatedNode.cpp
-    func deleteRepeateNode(headNode:inout ListNode<Any>?) {
-        guard let _ = headNode else {return}
-        var preNode:ListNode<Any>? = nil
-        var curNode:ListNode<Any>? = headNode
-        while curNode != nil {
-            var nextNode:ListNode<Any>? = curNode?.next
-            if nextNode?.value != curNode.value || nextNode? == nil {
-                preNode = curNode
-                curNode = curNode.next
-            } else {
-                while nextNode.next.value,nextNode?.next.value == curNode.value {
-                    nextNode? = nextNode?.next
-                }
-                if  preNode == nil { // 删除的节点是头结点
-                    headNode = nextNode
-                } else {
-                    preNode.next = nextNode?
-                }
-                curNode = nextNode?
-            }
-        }
-    }
+//    func deleteRepeateNode(headNode:inout ListNode<Any>?) {
+//        guard let _ = headNode else {return}
+//        var preNode:ListNode<Any>? = nil
+//        var curNode:ListNode<Any>? = headNode
+//        while curNode != nil {
+//            var nextNode:ListNode<Any>? = curNode?.next
+//            if nextNode?.value != curNode.value || nextNode? == nil {
+//                preNode = curNode
+//                curNode = curNode.next
+//            } else {
+//                while nextNode.next.value,nextNode?.next.value == curNode.value {
+//                    nextNode? = nextNode?.next
+//                }
+//                if  preNode == nil { // 删除的节点是头结点
+//                    headNode = nextNode
+//                } else {
+//                    preNode.next = nextNode?
+//                }
+//                curNode = nextNode?
+//            }
+//        }
+//    }
     
     
     //MARK:  在O(1)的时间内,删除一个节点,假设该节点位于链表内
