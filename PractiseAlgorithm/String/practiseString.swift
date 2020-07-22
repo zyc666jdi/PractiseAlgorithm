@@ -15,8 +15,71 @@ class practiseString: NSObject {
         //        let string = self.replaceString(str: "We are happy")
         //        print(string)
 //        self.sortString(str: "aabb")
-        testMatch();
+//        testMatch();
+        testIsNumber()
     }
+    
+    // MARK: 判断字符串是否是数字
+    //  a[.[B]][e/EC]
+    // 遍历这个字符串,满足规则往后移动,否则停止,直到匹配所有规则,看字符串是否遍历完
+    // https://github.com/zhulintao/CodingInterviewChinese2/blob/master/20_NumericStrings/NumericStrings.cpp
+    func testIsNumber(){
+        testCaseIsNumber(str: "+100", expect: true)
+        testCaseIsNumber(str: "5e2", expect: true)
+        testCaseIsNumber(str: "-123", expect: true)
+        testCaseIsNumber(str: "3.1415", expect: true)
+        testCaseIsNumber(str: "-1E-16", expect: true)
+        testCaseIsNumber(str: "12e", expect: false)
+        testCaseIsNumber(str: "1a3.14", expect: false)
+        testCaseIsNumber(str: "1.2.3", expect: false)
+        testCaseIsNumber(str: "+-5", expect: false)
+        testCaseIsNumber(str: "12e+5.4", expect: false)
+    }
+    
+    func testCaseIsNumber(str:String,expect:Bool) {
+        let result =  isNumber(str: str)
+        if result != expect {
+            debugPrint("testCaseIsNumber_failure",String(result))
+        } else {
+            debugPrint("testCaseIsNumber_Pass",String(expect))
+        }
+    }
+    
+    func isNumber(str:String) ->Bool {
+        
+        func scanUnsignedInteger(str:String,location:inout Int) ->Bool {
+            let before = location;
+            while location < str.length, Int(str[location]) ?? -1 >= 0,Int(str[location]) ?? -1 <= 9  {
+                location += 1
+            }
+            return location > before;
+        }
+        
+        func scanInteger(str:String,location:inout Int) ->Bool {
+            if location < str.length,str[location] == "+" || str[location] == "-" {
+                location += 1
+            }
+            return scanUnsignedInteger(str: str, location: &location)
+        }
+        
+        var location = 0;
+        var match = scanInteger(str: str, location: &location)
+        if location < str.length,str[location] == "." {
+            location += 1
+            match = scanUnsignedInteger(str: str, location: &location) || match // 1.  .11   1.11
+            // tip: 写成  match || scanUnsignedInteger(str: str, location: &location) 右边可能不执行,会导致没有遍历到字符串的末尾,return false
+        }
+        if location < str.length,str[location] == "e" || str[location] == "E" {
+            location += 1
+            match = match && scanInteger(str: str, location: &location) // 1E1
+        }
+        if location == str.length,match {
+            return true
+        } else {
+            return false;
+        }
+    }
+    
     
     // MARK: 正则表达式
     // 判断字符串与模式是否匹配,.代表任意的字符串,*代表前面的字符可以出现任意次数
