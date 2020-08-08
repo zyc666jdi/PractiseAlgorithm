@@ -24,7 +24,76 @@ class PractiseSort: NSObject {
 //        print("findMinELementInSpecialArray:",String(element ?? 0));
 //        print("findMinELementInSpecialArray1:",String(element ?? 0));
         
+//          testSortArray()
+        
     }
+    
+    //MARK: 对数组进行排序,使奇数在前,偶数在后
+      func testSortArray(){
+            var array = [1,3,4,7,8];
+            testCaseSortArray(arr: &array)
+        }
+        
+        func testCaseSortArray(arr:inout [Int] ) {
+    //        sortArray(arr: &arr)
+            sortArray(arr: &arr, rule: fit(a:))
+            var currentFit = true;
+            var flag = true;
+            for item in arr {
+                if !fit(a: item) {
+                    currentFit = false;
+                }
+                if currentFit == false,fit(a: item) {
+                    debugPrint("\(item)不符合")
+                    flag = false;
+                    break;
+                }
+            }
+            if flag {
+                    debugPrint(arr);
+            }
+        }
+        
+        // 函数作为参数传递,提高代码复用性
+        func sortArray(arr:inout [Int],rule:(Int) ->Bool) {
+            var left:Int = 0;
+            var right:Int = arr.count - 1;
+            while left < right {
+                while rule(arr[left]),left < right {
+                    left += 1
+                }
+                while !rule(arr[right]),left < right {
+                    right -= 1
+                }
+                let tmp = arr[left]
+                arr[left] = arr[right]
+                arr[right] = tmp
+            }
+        }
+        
+        func sortArray(arr:inout [Int]) {
+            var left:Int = 0;
+            var right:Int = arr.count - 1;
+            while left < right {
+                while fit(a: arr[left]),left < right {
+                    left += 1
+                }
+                while !fit(a: arr[right]),left < right {
+                    right -= 1
+                }
+                let tmp = arr[left]
+                arr[left] = arr[right]
+                arr[right] = tmp
+            }
+        }
+        // 判断是否是偶数
+        func fit(a:Int) ->Bool {
+            if a & 0x01 == 1 {
+                return true
+            } else {
+                return false;
+            }
+        }
     
     // 旋转数组中查找最小值, [3,4,5,1,2] ,时间复杂度比n小
     // 二分法查找
