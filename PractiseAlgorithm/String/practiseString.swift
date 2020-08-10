@@ -16,7 +16,7 @@ class practiseString: NSObject {
         //        print(string)
 //        self.sortString(str: "aabb")
 //        testMatch();
-        testIsNumber()
+//        testIsNumber()
     }
     
     // MARK: 判断字符串是否是数字

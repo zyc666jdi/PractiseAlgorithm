@@ -12,17 +12,18 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-       //
+       
 //        PractiseSort()
-        //
+        
 //        PractiseFind()
-        //
-        practiseString()
-        //
+        
+//        practiseString()
+        
 //        PractiseValue()
         
 //        PractiseNumber()
         
+        practiseListNode()
     }
     
 

@@ -28,7 +28,8 @@ class PractiseSort: NSObject {
         
     }
     
-    //MARK: 对数组进行排序,使奇数在前,偶数在后
+    // MARK: 对数组进行排序,使奇数在前,偶数在后
+    // https://github.com/zhulintao/CodingInterviewChinese2/blob/master/21_ReorderArray/ReorderArray.cpp
       func testSortArray(){
             var array = [1,3,4,7,8];
             testCaseSortArray(arr: &array)

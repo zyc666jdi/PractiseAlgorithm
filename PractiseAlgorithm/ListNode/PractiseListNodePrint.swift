@@ -12,9 +12,22 @@ open class ListNode<T>: NSObject {
     var value:T
     var next:ListNode?
     
-    init(value:T) {
+    init(_ value:T) {
         self.value = value
         self.next = nil
+    }
+    
+    static func  constructListNode(arr:[T]) -> ListNode? {
+        guard let firstElement = arr.first else {return nil}
+        let head:ListNode? = ListNode.init(firstElement)
+        var node:ListNode? = head
+        for (index,item) in arr.enumerated(){
+            if index > 0 {
+                node?.next = ListNode.init(item)
+                node = node?.next
+            }
+        }
+        return head
     }
 }
 
@@ -24,10 +37,56 @@ class practiseListNode: NSObject {
     
     override init() {
         super.init()
+        testFindLastNodeInListNode()
         
     }
     
-    //MARK: 在一个排序的链表中,删除重复的节点
+    func testFindLastNodeInListNode() {
+        let nodeDataSource = [1,2,3,4,5]
+        testCaseFindLastNodeInListNode(arr: nodeDataSource, k: 1, expect: 5)
+        testCaseFindLastNodeInListNode(arr: nodeDataSource, k: 5, expect: 1)
+        testCaseFindLastNodeInListNode(arr: nodeDataSource, k: 0, expect: -1)
+        testCaseFindLastNodeInListNode(arr: nodeDataSource, k: 6, expect: -1)
+    }
+    
+    func testCaseFindLastNodeInListNode(arr:[Int],k:Int,expect:Int){
+        let head = ListNode.constructListNode(arr: arr)
+        let result = findLastNodeInListNode(head: head!, k: k)
+        if result?.value ?? -1 == expect { // -1 代表非法输入
+            print("testCaseFindLastNodeInListNode_surrcess",k)
+        } else {
+            print("testCaseFindLastNodeInListNode_failure",k)
+        }
+    }
+    
+    // MARK: - 求一个链表中倒数第k个节点
+    func findLastNodeInListNode<T>(head:ListNode<T>?,k:Int) -> ListNode<T>? {
+        if (head == nil) {
+            return nil
+        }
+        if (k <= 0) {
+            return nil
+        }
+        var node:ListNode<T>? = head
+        var lastNode:ListNode<T>? = head
+        for _ in 1..<k {
+            if node != nil,node?.next != nil {
+                node = node?.next
+            } else {
+                return nil // 节点不足k
+            }
+        }
+        while node != nil,node?.next != nil {
+            node = node?.next
+            lastNode = lastNode?.next
+        }
+        return lastNode
+    }
+    
+    
+    
+    
+    //MARK: - 在一个排序的链表中,删除重复的节点
     // https://github.com/zhulintao/CodingInterviewChinese2/blob/master/18_02_DeleteDuplicatedNode/DeleteDuplicatedNode.cpp
 //    func deleteRepeateNode(headNode:inout ListNode<Any>?) {
 //        guard let _ = headNode else {return}
