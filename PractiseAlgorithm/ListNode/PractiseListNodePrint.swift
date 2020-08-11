@@ -57,10 +57,67 @@ class practiseListNode: NSObject {
         super.init()
        // testFindLastNodeInListNode()
         
-       testFindCircleJoinNodeInListNode()
+      // testFindCircleJoinNodeInListNode()
+        
+      //   testReverseListNode()
     }
     
+    // MARK: - 反转一个链表
+    // https://github.com/zhulintao/CodingInterviewChinese2/blob/master/24_ReverseList/ReverseList.cpp
+     func testReverseListNode() {
+            testCaseReverseListNode(arr: [1,2,3,4,5])
+            testCaseReverseListNode(arr: [1])
+            testCaseReverseListNode(arr: [])
+        }
+        
+        func testCaseReverseListNode(arr:[Int]) {
+            let head = ListNode.constructListNode(arr: arr)
+            var reverseNode:ListNode<Int>? = self.reverseListNode(head: head)
+            if reverseNode == nil {
+                print("testCaseReverseListNode_success_nilValue",arr)
+                return
+            }
+            var reverseValues:[Int] = []
+            while reverseNode?.next != nil {
+                reverseValues.append(reverseNode!.value)
+                reverseNode = reverseNode?.next!
+            }
+            reverseValues.append(reverseNode!.value)
+            var last:[Int] = arr
+            last.reverse()
+            if reverseValues == last {
+                 print("testCaseReverseListNode_success",arr)
+            } else {
+                print("testCaseReverseListNode_failure",arr)
+            }
+        }
+        
+        func reverseListNode<T>(head:ListNode<T>?) -> ListNode<T>? {
+            guard let head = head else {return nil}
+            var node:ListNode<T>? = nil
+            var last:ListNode<T>? = nil
+            var next:ListNode<T>? = nil
+            if head.next == nil {
+                return head
+            } else {
+                node = head.next
+                last = head
+                last?.next = nil
+            }
+            while node?.next != nil {
+                next = node?.next
+                node?.next = last
+                last = node
+                node = next
+               
+            }
+            node?.next = last
+            return node
+        }
+    
+    
     // MARK: - 找出链表中环的节点
+    // https://github.com/zhulintao/CodingInterviewChinese2/blob/master/23_EntryNodeInListLoop/EntryNodeInListLoop.cpp
     func testFindCircleJoinNodeInListNode() {
         testCaseFindCircleJoinNodeInListNode(arr: [1,2,3,4,5], expect: 3)
     }
