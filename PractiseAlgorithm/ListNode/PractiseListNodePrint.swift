@@ -8,7 +8,7 @@
 
 import UIKit
 
-open class ListNode<T:Equatable>: NSObject { // 遵守Equatable协议,可以用 == 判断相等
+open class ListNode<T:BinaryInteger>: NSObject { // 遵守Equatable协议,可以用 == 判断相等,遵守BinaryInteger,可以判断大小
     var value:T
     var next:ListNode?
     
@@ -60,6 +60,53 @@ class practiseListNode: NSObject {
       // testFindCircleJoinNodeInListNode()
         
       //   testReverseListNode()
+        
+      //  testMergeSortedListNode()
+    }
+    
+    // MARK: - 合并两个从小到大排序的链表
+    // https://github.com/zhulintao/CodingInterviewChinese2/blob/master/25_MergeSortedLists/MergeSortedLists.cpp
+    func testMergeSortedListNode(){
+        testCaseMergeSortedListNode(a: [1,3,5], b: [2,4,6])
+        testCaseMergeSortedListNode(a: [1,3,5], b: [1,3,5])
+        testCaseMergeSortedListNode(a: [1], b: [2])
+        testCaseMergeSortedListNode(a: [1,3,5], b: [])
+        testCaseMergeSortedListNode(a: [], b: [])
+    }
+    
+    func testCaseMergeSortedListNode(a:[Int],b:[Int]) {
+        let aNode:ListNode<Int>? = ListNode.constructListNode(arr: a)
+        let bNode:ListNode<Int>? = ListNode.constructListNode(arr: b)
+        var mergeNode = self.mergeSortedListNode(aNode: aNode, bNode: bNode)
+        if mergeNode == nil {
+            print("testCaseMergeSortedListNode_success_nil",a,b)
+            return;
+        }
+        var mergeValues:[Int] = []
+        while mergeNode?.next != nil  {
+                mergeValues.append(mergeNode!.value)
+                mergeNode = mergeNode?.next
+        }
+        mergeValues.append(mergeNode!.value)
+        let originValues = (a + b).sorted { $0 < $1}
+        if originValues == mergeValues {
+            print("testCaseMergeSortedListNode_success",a,b)
+        } else {
+            print("testCaseMergeSortedListNode_failure",a,b)
+        }
+        
+    }
+    
+    func mergeSortedListNode<T>(aNode:ListNode<T>?,bNode:ListNode<T>?) -> ListNode<T>? {
+        guard let a = aNode else {return bNode}
+        guard let b = bNode else {return aNode}
+        if a.value >= b.value {
+            b.next = mergeSortedListNode(aNode: a, bNode: b.next)
+            return b
+        } else {
+            a.next = mergeSortedListNode(aNode: a.next, bNode: b)
+            return a
+        }
     }
     
     // MARK: - 反转一个链表
