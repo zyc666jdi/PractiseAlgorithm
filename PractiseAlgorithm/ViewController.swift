@@ -24,6 +24,8 @@ class ViewController: UIViewController {
 //        PractiseNumber()
         
         practiseListNode()
+        
+        PractiseBinaryTree()
     }
     
 
