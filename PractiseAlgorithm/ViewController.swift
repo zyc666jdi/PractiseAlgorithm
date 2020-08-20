@@ -23,9 +23,11 @@ class ViewController: UIViewController {
         
 //        PractiseNumber()
         
-        practiseListNode()
+        let _ = practiseListNode()
         
-        PractiseBinaryTree()
+        let _ = PractiseBinaryTree()
+        
+        let _ = PractiseStack()
     }
     
 

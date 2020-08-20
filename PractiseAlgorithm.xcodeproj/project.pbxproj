@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7B26637E24EEE1B800BD0ED4 /* PractiseStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B26637D24EEE1B800BD0ED4 /* PractiseStack.swift */; };
 		7B4A198524AE429D008521E0 /* PractiseNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B4A198424AE429D008521E0 /* PractiseNumber.swift */; };
 		7BE2FC8024C60856002767CD /* IMG_4154.GIF in Resources */ = {isa = PBXBuildFile; fileRef = 7BE2FC7E24C60856002767CD /* IMG_4154.GIF */; };
 		7BE2FC8124C60856002767CD /* IMG_4152.GIF in Resources */ = {isa = PBXBuildFile; fileRef = 7BE2FC7F24C60856002767CD /* IMG_4152.GIF */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7B26637D24EEE1B800BD0ED4 /* PractiseStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PractiseStack.swift; sourceTree = "<group>"; };
 		7B4A198424AE429D008521E0 /* PractiseNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PractiseNumber.swift; sourceTree = "<group>"; };
 		7BE2FC7E24C60856002767CD /* IMG_4154.GIF */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = IMG_4154.GIF; sourceTree = "<group>"; };
 		7BE2FC7F24C60856002767CD /* IMG_4152.GIF */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = IMG_4152.GIF; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				B7B173B923B4AA4E00B0729C /* PractiseStackQueue.swift */,
+				7B26637D24EEE1B800BD0ED4 /* PractiseStack.swift */,
 			);
 			path = StackQueue;
 			sourceTree = "<group>";
@@ -315,6 +318,7 @@
 				B7DC12DD23A9EE47006DCF9B /* SceneDelegate.swift in Sources */,
 				B7B173AC23AD121400B0729C /* PractiseFind.swift in Sources */,
 				B7B173AF23AE388200B0729C /* practiseString.swift in Sources */,
+				7B26637E24EEE1B800BD0ED4 /* PractiseStack.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
