@@ -49,7 +49,7 @@ class PractiseBinaryTree: NSObject {
 //        let inOrder:[Int] = [4,7,2,1,5,3,8,6]
 //        let _ = self.construcCoreBinaryTree(startPreOrderIndex: 0, endPrePrderIndex: 7, preOrder: preOrder, startInorderIndex: 0, endInorderIndex: 7, inOrder: inOrder)
         
-        testTreeHasSubTree()
+//        testTreeHasSubTree()
         
         
     }

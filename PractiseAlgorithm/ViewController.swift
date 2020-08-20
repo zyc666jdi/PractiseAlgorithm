@@ -28,6 +28,8 @@ class ViewController: UIViewController {
         let _ = PractiseBinaryTree()
         
         let _ = PractiseStack()
+        
+        let _ = PractiseMatrix()
     }
     
 
