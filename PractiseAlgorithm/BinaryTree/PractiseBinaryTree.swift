@@ -53,6 +53,8 @@ class PractiseBinaryTree: NSObject {
         
 //        testWhereIsBinarySearchTree()
         
+//         testPrintBinaryTreeReverse()
+        
         
     }
     
@@ -95,7 +97,66 @@ class PractiseBinaryTree: NSObject {
          return whereIsBinarySearchTree(arr: leftArray) && whereIsBinarySearchTree(arr: rightArray)
      }
      
-     
+     // MARK: - 从上向下打印一个二叉树,按照特定的顺序打印每一行
+    func testPrintBinaryTreeReverse() {
+        let tree4 = BinaryTree.init(4, BinaryTree(value: 8), BinaryTree(value: 9))
+        let tree5 = BinaryTree.init(5, BinaryTree(value: 10), BinaryTree(value: 11))
+        let tree2 = BinaryTree.init(2, tree4, tree5)
+        let tree6 = BinaryTree.init(6, BinaryTree(value: 12), BinaryTree(value: 13))
+        let tree7 = BinaryTree.init(7, BinaryTree(value: 14), BinaryTree(value: 15))
+        let tree3 = BinaryTree.init(3, tree6, tree7)
+        let tree1 = BinaryTree.init(1, tree2, tree3)
+        printBinaryTreeReverse(head: tree1)
+    }
+    //            1
+    //         /        \
+    //        2          3
+    //       /\        /   \
+    //      4  5        6   7
+    //     / \ / \     / \  / \
+    //     8 9 10 11  12 13 14 15
+    
+    //  1
+    //  3  2
+    //  4  5  6  7
+    //  15 14 13 12 11 10 9 8
+    func printBinaryTreeReverse(head:BinaryTree<Int>) {
+        let arr1:[BinaryTree<Int>] = [head]
+        let arr2:[BinaryTree<Int>] = []
+        var arr:[[BinaryTree<Int>]] = [arr1,arr2]
+        var current:Int = 0
+        var next:Int = 1
+        while arr[0].count > 0 || arr[1].count > 0 {
+            if current == 0 {
+                while arr[current].count > 0 {
+                    let tree = arr[current].removeLast()
+                    debugPrint("\(tree.value)", separator:"", terminator:" ")
+                    if let left = tree.left {
+                        arr[next].append(left)
+                    }
+                    if let right = tree.right {
+                        arr[next].append(right)
+                    }
+                }
+                
+            } else {
+                while arr[current].count > 0 {
+                    let tree = arr[current].removeLast()
+                    debugPrint("\(tree.value)", separator:"", terminator:" ")
+                    if let right = tree.right {
+                        arr[next].append(right)
+                    }
+                    if let left = tree.left {
+                        arr[next].append(left)
+                    }
+                }
+            }
+            current = 1 - current
+            next = 1 - next
+            debugPrint(separator:"", terminator:"\n")
+        }
+    }
+    
      
     
     
