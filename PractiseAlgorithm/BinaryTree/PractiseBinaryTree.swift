@@ -51,8 +51,53 @@ class PractiseBinaryTree: NSObject {
         
 //        testTreeHasSubTree()
         
+//        testWhereIsBinarySearchTree()
+        
         
     }
+    
+    // MARK: - 判断一个倒叙排列是否是二叉搜索树
+    // https://github.com/zhulintao/CodingInterviewChinese2/blob/master/33_SquenceOfBST/SquenceOfBST.cpp
+    func testWhereIsBinarySearchTree() {
+         if whereIsBinarySearchTree(arr: [5 ,7 ,6 ,9 , 11 ,10 ,8]) {
+             debugPrint("whereIsBinarySearchTree","[5 ,7 ,6 ,9 , 11 ,10 ,8]","pass")
+         } else {
+             debugPrint("whereIsBinarySearchTree","[5 ,7 ,6 ,9 , 11 ,10 ,8]","not pass")
+         }
+         if !whereIsBinarySearchTree(arr: [7 ,4 ,6 ,5]) {
+             debugPrint("whereIsBinarySearchTree","[7 ,4 ,6 ,5]","pass")
+         } else {
+             debugPrint("whereIsBinarySearchTree","[7 ,4 ,6 ,5]" ,"not pass")
+         }
+         
+     }
+     
+    // 5 7 6 9  11 10 8
+     func whereIsBinarySearchTree(arr:[Int]?) -> Bool {
+         guard var tmpArr  = arr ,tmpArr.count > 1 else {return true}
+         let head = tmpArr.removeLast()
+         var rightIndex:Int = 0
+         for (i ,v) in tmpArr.enumerated() {
+             if v > head {
+                 rightIndex = i
+                 break
+             }
+         }
+         for j in rightIndex ..< tmpArr.count {
+             let v = tmpArr[j]
+             if v < head {
+                 return false
+             }
+         }
+         // prefix suffix
+         let leftArray:[Int] = Array(tmpArr.prefix(rightIndex))
+         let rightArray:[Int] = Array(tmpArr.suffix(tmpArr.count - rightIndex))
+         return whereIsBinarySearchTree(arr: leftArray) && whereIsBinarySearchTree(arr: rightArray)
+     }
+     
+     
+     
+    
     
     //MARK: - 二叉树是否包含另一个二叉树
     // https://github.com/zhulintao/CodingInterviewChinese2/blob/master/26_SubstructureInTree/SubstructureInTree.cpp

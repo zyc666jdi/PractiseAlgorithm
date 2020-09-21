@@ -14,7 +14,7 @@ class PractiseMatrix: NSObject {
     override init() {
         super.init()
         
-        testPrintMatrix()
+//        testPrintMatrix()
         
     }
     
