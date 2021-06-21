@@ -23,13 +23,21 @@ class ViewController: UIViewController {
         
 //        PractiseNumber()
         
-        let _ = practiseListNode()
+//        let _ = practiseListNode()
+//
+//        let _ = PractiseBinaryTree()
+//
+//        let _ = PractiseStack()
+//
+//        let _ = PractiseMatrix()
         
-        let _ = PractiseBinaryTree()
-        
-        let _ = PractiseStack()
-        
-        let _ = PractiseMatrix()
+//        testLevelOrder()
+//        let _ = testPostorderTraversalLeetcode2()
+//        let _ = testPostorderMirrosLeetcode1()
+        //let _ = testConstructFromPrePostRecursion()
+//            testPrint()
+//        testGetMinimumDifference()
+        testSortedArrayToBST()
     }
     
 

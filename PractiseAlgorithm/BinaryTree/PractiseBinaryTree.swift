@@ -24,6 +24,7 @@ open class BinaryTree<T:BinaryInteger>: NSObject {
         self.left = nil
         self.right = nil
     }
+   
 }
 
 
