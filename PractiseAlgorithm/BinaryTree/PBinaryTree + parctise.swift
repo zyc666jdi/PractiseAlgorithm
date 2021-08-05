@@ -171,5 +171,17 @@ func testSortedArrayToBST(){
     debugPrint("_sortedArrayToBST",result)
 }
 
+func testGetLeastNumbers(){
+    let result = Solution.init().getLeastNumbers([0,0,1,2,4,2,2,3,1,4], 8) //
+    debugPrint("_testGetLeastNumbers",result)
+}
 
+func testSpiralOrder(){
+    let result = Solution.init().spiralOrder([[1,2,3],[4,5,6],[7,8,9]]) //
+    debugPrint("_testSpiralOrder",result)
+}
+
+func testPractiseNumber(){
+    Solution.init().myPow(2, 10)
+}
 

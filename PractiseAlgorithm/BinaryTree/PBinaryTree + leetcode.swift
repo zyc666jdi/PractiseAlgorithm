@@ -789,5 +789,62 @@ public class Solution {
         return postorder
     }
     
+    // 剑指 Offer 40. 最小的k个数
+    // 可以用二叉堆解题 n * logk
+    func getLeastNumbers(_ arr: [Int], _ k: Int) -> [Int] {
+        var sort:[Int] = [] // 数组性能差,用最小二叉堆最好
+        if k == 0 {
+            return []
+        }
+        
+        func enter(element:Int, sort:inout [Int],num:Int) { // 从大到小
+            if sort.count > num {
+                return
+            }
+            var insertIndex = 0
+            if sort.count > 0 {
+                for i in 0 ..< sort.count {
+                    if element < sort[i] {
+                        insertIndex += 1
+                    }
+                }
+            }
+            if insertIndex < sort.count,sort.count != 0 {
+                sort.insert(element, at: insertIndex)
+            } else {
+                sort.append(element)
+            }
+        }
+        
+        func exchangeIfNeed(element:Int, sort:inout [Int]) {
+            for i in 0 ..< sort.count {
+                if element < sort[i] {
+                    if i  < sort.count - 1 {
+                        sort[i] = sort[i + 1]
+                    } else if i == sort.count - 1 {
+                        sort[i] = element
+                    }
+                } else if element >= sort[i] {
+                    if i > 0 {
+                        sort[i - 1] = element
+                    } else if i == 0 {
+                        return
+                    }
+                    break;
+                }
+            }
+        }
+        //
+        for v in arr {
+            if sort.count < k {
+                enter(element: v, sort: &sort, num: k)
+            } else {
+                exchangeIfNeed(element: v, sort: &sort)
+            }
+            debugPrint("___",sort)
+        }
+        return sort
+    }
+    
 }
 

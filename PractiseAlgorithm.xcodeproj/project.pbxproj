@@ -14,15 +14,14 @@
 		7B19ABC4265881780044F40D /* PTreeNode + print.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B19ABC3265881780044F40D /* PTreeNode + print.swift */; };
 		7B19ABCA265F10E80044F40D /* PTreeNode + AVL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B19ABC9265F10E80044F40D /* PTreeNode + AVL.swift */; };
 		7B26637E24EEE1B800BD0ED4 /* PractiseStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B26637D24EEE1B800BD0ED4 /* PractiseStack.swift */; };
-		7B26638124EEE3F500BD0ED4 /* PractiseMatrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B26638024EEE3F500BD0ED4 /* PractiseMatrix.swift */; };
 		7B36717A2602CC5D00C71401 /* PQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3671792602CC5D00C71401 /* PQueue.swift */; };
 		7B36717F26062B6700C71401 /* PStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B36717E26062B6700C71401 /* PStack.swift */; };
 		7B367183260ABF0300C71401 /* PBinaryTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B367182260ABF0300C71401 /* PBinaryTree.swift */; };
 		7B367187260AC12600C71401 /* PTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B367186260AC12600C71401 /* PTree.swift */; };
-		7B4A198524AE429D008521E0 /* PractiseNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B4A198424AE429D008521E0 /* PractiseNumber.swift */; };
+		7B586CAE26AC0DD500FFFB25 /* PMatrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B586CAD26AC0DD500FFFB25 /* PMatrix.swift */; };
+		7B7B253826B0C35800119830 /* PNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7B253726B0C35800119830 /* PNumber.swift */; };
 		7B8A118526774F0E00635694 /* PTreeNode + BinarySearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8A118426774F0E00635694 /* PTreeNode + BinarySearch.swift */; };
-		7BE2FC8024C60856002767CD /* IMG_4154.GIF in Resources */ = {isa = PBXBuildFile; fileRef = 7BE2FC7E24C60856002767CD /* IMG_4154.GIF */; };
-		7BE2FC8124C60856002767CD /* IMG_4152.GIF in Resources */ = {isa = PBXBuildFile; fileRef = 7BE2FC7F24C60856002767CD /* IMG_4152.GIF */; };
+		7B8A118A26815A1900635694 /* PCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8A118926815A1900635694 /* PCollection.swift */; };
 		B786E7B0248F0F3F00DE1285 /* PractiseValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B786E7AF248F0F3F00DE1285 /* PractiseValue.swift */; };
 		B7B173AC23AD121400B0729C /* PractiseFind.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B173AB23AD121400B0729C /* PractiseFind.swift */; };
 		B7B173AF23AE388200B0729C /* practiseString.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B173AE23AE388100B0729C /* practiseString.swift */; };
@@ -57,15 +56,14 @@
 		7B19ABC3265881780044F40D /* PTreeNode + print.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PTreeNode + print.swift"; sourceTree = "<group>"; };
 		7B19ABC9265F10E80044F40D /* PTreeNode + AVL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PTreeNode + AVL.swift"; sourceTree = "<group>"; };
 		7B26637D24EEE1B800BD0ED4 /* PractiseStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PractiseStack.swift; sourceTree = "<group>"; };
-		7B26638024EEE3F500BD0ED4 /* PractiseMatrix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PractiseMatrix.swift; sourceTree = "<group>"; };
 		7B3671792602CC5D00C71401 /* PQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PQueue.swift; sourceTree = "<group>"; };
 		7B36717E26062B6700C71401 /* PStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PStack.swift; sourceTree = "<group>"; };
 		7B367182260ABF0300C71401 /* PBinaryTree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PBinaryTree.swift; sourceTree = "<group>"; };
 		7B367186260AC12600C71401 /* PTree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTree.swift; sourceTree = "<group>"; };
-		7B4A198424AE429D008521E0 /* PractiseNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PractiseNumber.swift; sourceTree = "<group>"; };
+		7B586CAD26AC0DD500FFFB25 /* PMatrix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PMatrix.swift; sourceTree = "<group>"; };
+		7B7B253726B0C35800119830 /* PNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PNumber.swift; sourceTree = "<group>"; };
 		7B8A118426774F0E00635694 /* PTreeNode + BinarySearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PTreeNode + BinarySearch.swift"; sourceTree = "<group>"; };
-		7BE2FC7E24C60856002767CD /* IMG_4154.GIF */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = IMG_4154.GIF; sourceTree = "<group>"; };
-		7BE2FC7F24C60856002767CD /* IMG_4152.GIF */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = IMG_4152.GIF; sourceTree = "<group>"; };
+		7B8A118926815A1900635694 /* PCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PCollection.swift; sourceTree = "<group>"; };
 		B786E7AF248F0F3F00DE1285 /* PractiseValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PractiseValue.swift; sourceTree = "<group>"; };
 		B7B173AB23AD121400B0729C /* PractiseFind.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PractiseFind.swift; sourceTree = "<group>"; };
 		B7B173AE23AE388100B0729C /* practiseString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = practiseString.swift; sourceTree = "<group>"; };
@@ -107,7 +105,7 @@
 		7B26637F24EEE3D500BD0ED4 /* Matrix */ = {
 			isa = PBXGroup;
 			children = (
-				7B26638024EEE3F500BD0ED4 /* PractiseMatrix.swift */,
+				7B586CAD26AC0DD500FFFB25 /* PMatrix.swift */,
 			);
 			path = Matrix;
 			sourceTree = "<group>";
@@ -115,16 +113,22 @@
 		7B4A198324AE4274008521E0 /* Number */ = {
 			isa = PBXGroup;
 			children = (
-				7B4A198424AE429D008521E0 /* PractiseNumber.swift */,
+				7B7B253726B0C35800119830 /* PNumber.swift */,
 			);
 			path = Number;
+			sourceTree = "<group>";
+		};
+		7B8A1188268159FB00635694 /* Collection */ = {
+			isa = PBXGroup;
+			children = (
+				7B8A118926815A1900635694 /* PCollection.swift */,
+			);
+			path = Collection;
 			sourceTree = "<group>";
 		};
 		7BE2FC7D24C60829002767CD /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				7BE2FC7F24C60856002767CD /* IMG_4152.GIF */,
-				7BE2FC7E24C60856002767CD /* IMG_4154.GIF */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -211,6 +215,7 @@
 		B7DC12D923A9EE47006DCF9B /* PractiseAlgorithm */ = {
 			isa = PBXGroup;
 			children = (
+				7B8A1188268159FB00635694 /* Collection */,
 				7B26637F24EEE3D500BD0ED4 /* Matrix */,
 				7B4A198324AE4274008521E0 /* Number */,
 				B786E7AE248F0EE600DE1285 /* Value */,
@@ -331,8 +336,6 @@
 			files = (
 				B7DC12E723A9EE48006DCF9B /* LaunchScreen.storyboard in Resources */,
 				B7DC12E423A9EE48006DCF9B /* Assets.xcassets in Resources */,
-				7BE2FC8024C60856002767CD /* IMG_4154.GIF in Resources */,
-				7BE2FC8124C60856002767CD /* IMG_4152.GIF in Resources */,
 				B7DC12E223A9EE47006DCF9B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -352,20 +355,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				7B19AB76261E7F8F0044F40D /* PBinaryTree + traversal.swift in Sources */,
+				7B7B253826B0C35800119830 /* PNumber.swift in Sources */,
 				7B19AB7A261FC5A60044F40D /* PBinaryTree + parctise.swift in Sources */,
 				B7DC12FE23A9EE81006DCF9B /* PractiseSort.swift in Sources */,
 				7B367183260ABF0300C71401 /* PBinaryTree.swift in Sources */,
 				7B36717F26062B6700C71401 /* PStack.swift in Sources */,
+				7B586CAE26AC0DD500FFFB25 /* PMatrix.swift in Sources */,
 				B7B173B223AF664900B0729C /* PractiseListNodePrint.swift in Sources */,
 				7B19ABC4265881780044F40D /* PTreeNode + print.swift in Sources */,
 				7B19AB822634E7EA0044F40D /* PBinaryTree + leetcode2.swift in Sources */,
-				7B26638124EEE3F500BD0ED4 /* PractiseMatrix.swift in Sources */,
 				B786E7B0248F0F3F00DE1285 /* PractiseValue.swift in Sources */,
 				7B19ABCA265F10E80044F40D /* PTreeNode + AVL.swift in Sources */,
 				7B36717A2602CC5D00C71401 /* PQueue.swift in Sources */,
 				B7DC12DF23A9EE47006DCF9B /* ViewController.swift in Sources */,
 				B7B173B523B36DA500B0729C /* PractiseBinaryTree.swift in Sources */,
-				7B4A198524AE429D008521E0 /* PractiseNumber.swift in Sources */,
 				7B19AB7E2623CEF30044F40D /* PBinaryTree + leetcode.swift in Sources */,
 				B7DC12DB23A9EE47006DCF9B /* AppDelegate.swift in Sources */,
 				B7B173BA23B4AA4E00B0729C /* PractiseStackQueue.swift in Sources */,
@@ -374,6 +377,7 @@
 				B7B173AF23AE388200B0729C /* practiseString.swift in Sources */,
 				7B8A118526774F0E00635694 /* PTreeNode + BinarySearch.swift in Sources */,
 				7B26637E24EEE1B800BD0ED4 /* PractiseStack.swift in Sources */,
+				7B8A118A26815A1900635694 /* PCollection.swift in Sources */,
 				7B367187260AC12600C71401 /* PTree.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

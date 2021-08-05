@@ -37,7 +37,10 @@ class ViewController: UIViewController {
         //let _ = testConstructFromPrePostRecursion()
 //            testPrint()
 //        testGetMinimumDifference()
-        testSortedArrayToBST()
+//        testSortedArrayToBST()
+//        testGetLeastNumbers()
+//        testSpiralOrder()
+        testPractiseNumber()
     }
     
 
