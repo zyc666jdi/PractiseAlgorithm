@@ -182,6 +182,6 @@ func testSpiralOrder(){
 }
 
 func testPractiseNumber(){
-    Solution.init().myPow(2, 10)
+    Solution.init().minArray([3,3,1,3])
 }
 

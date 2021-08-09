@@ -149,3 +149,48 @@ extension Solution {
         return count
     }
 }
+
+extension Solution {
+    // 剑指 Offer 10- I. 斐波那契数列
+    // https://leetcode-cn.com/problems/fei-bo-na-qi-shu-lie-lcof/
+    // 写一个函数，输入 n ，求斐波那契（Fibonacci）数列的第 n 项（即 F(N)）
+    func fib(_ n: Int) -> Int { // 此题为动态规划思路,如果用递归,性能很差
+        if n == 0 {
+            return 0
+        }
+        var Fi:Int = 1
+        var Faux:Int = 0
+        var i:Int = 1
+        while i  < n {
+            let nexValue = Fi + Faux
+            Faux = Fi
+            // 答案需要取模 1e9+7（1000000007），如计算初始结果为：1000000008，请返回 1。
+            Fi = nexValue > 1000000007 ? nexValue - 1000000007 : nexValue //
+            i += 1
+        }
+        return Fi
+    }
+}
+
+extension Solution {
+    // 剑指 Offer 10- II. 青蛙跳台阶问题
+    // https://leetcode-cn.com/problems/qing-wa-tiao-tai-jie-wen-ti-lcof/
+    // 一只青蛙一次可以跳上1级台阶，也可以跳上2级台阶。求该青蛙跳上一个 n 级的台阶总共有多少种跳法。
+    func numWays(_ n: Int) -> Int {
+        // F(n) = F(n - 1)              +           F(n - 2)
+        //        跳一次,还沙僧下n - 1个台阶      跳2个台阶,还剩下n - 2 个台阶
+        if n == 0 {
+            return 1
+        }
+        var Fi = 1
+        var Faux = 1
+        var i = 1
+        while  i < n {
+            let nextValue = Fi + Faux
+            Faux = Fi
+            Fi = nextValue > 1000000007 ? nextValue - 1000000007 : nextValue
+            i += 1
+        }
+        return Fi
+    }
+}

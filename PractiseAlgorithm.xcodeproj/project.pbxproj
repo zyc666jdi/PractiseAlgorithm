@@ -22,7 +22,6 @@
 		7B7B253826B0C35800119830 /* PNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7B253726B0C35800119830 /* PNumber.swift */; };
 		7B8A118526774F0E00635694 /* PTreeNode + BinarySearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8A118426774F0E00635694 /* PTreeNode + BinarySearch.swift */; };
 		7B8A118A26815A1900635694 /* PCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8A118926815A1900635694 /* PCollection.swift */; };
-		B786E7B0248F0F3F00DE1285 /* PractiseValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B786E7AF248F0F3F00DE1285 /* PractiseValue.swift */; };
 		B7B173AC23AD121400B0729C /* PractiseFind.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B173AB23AD121400B0729C /* PractiseFind.swift */; };
 		B7B173AF23AE388200B0729C /* practiseString.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B173AE23AE388100B0729C /* practiseString.swift */; };
 		B7B173B223AF664900B0729C /* PractiseListNodePrint.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B173B123AF664900B0729C /* PractiseListNodePrint.swift */; };
@@ -64,7 +63,6 @@
 		7B7B253726B0C35800119830 /* PNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PNumber.swift; sourceTree = "<group>"; };
 		7B8A118426774F0E00635694 /* PTreeNode + BinarySearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PTreeNode + BinarySearch.swift"; sourceTree = "<group>"; };
 		7B8A118926815A1900635694 /* PCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PCollection.swift; sourceTree = "<group>"; };
-		B786E7AF248F0F3F00DE1285 /* PractiseValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PractiseValue.swift; sourceTree = "<group>"; };
 		B7B173AB23AD121400B0729C /* PractiseFind.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PractiseFind.swift; sourceTree = "<group>"; };
 		B7B173AE23AE388100B0729C /* practiseString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = practiseString.swift; sourceTree = "<group>"; };
 		B7B173B123AF664900B0729C /* PractiseListNodePrint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PractiseListNodePrint.swift; sourceTree = "<group>"; };
@@ -136,7 +134,6 @@
 		B786E7AE248F0EE600DE1285 /* Value */ = {
 			isa = PBXGroup;
 			children = (
-				B786E7AF248F0F3F00DE1285 /* PractiseValue.swift */,
 			);
 			path = Value;
 			sourceTree = "<group>";
@@ -364,7 +361,6 @@
 				B7B173B223AF664900B0729C /* PractiseListNodePrint.swift in Sources */,
 				7B19ABC4265881780044F40D /* PTreeNode + print.swift in Sources */,
 				7B19AB822634E7EA0044F40D /* PBinaryTree + leetcode2.swift in Sources */,
-				B786E7B0248F0F3F00DE1285 /* PractiseValue.swift in Sources */,
 				7B19ABCA265F10E80044F40D /* PTreeNode + AVL.swift in Sources */,
 				7B36717A2602CC5D00C71401 /* PQueue.swift in Sources */,
 				B7DC12DF23A9EE47006DCF9B /* ViewController.swift in Sources */,
