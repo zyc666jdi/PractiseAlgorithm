@@ -82,7 +82,6 @@ extension Solution {
             return result
         }
         
-        
         var leftIndex:Int = 0
         var rightIndex:Int = numbers.count - 1
         var midInex:Int = 0 // 最终所求的index
@@ -99,13 +98,71 @@ extension Solution {
             if numbers[leftIndex] == numbers[midInex],numbers[leftIndex] == numbers[rightIndex] {
                 return getLowInOrder(left: leftIndex, right: rightIndex, arr: numbers)
             }
-            if numbers[midInex] < numbers[leftIndex] {
+            if numbers[midInex] < numbers[leftIndex] { // 相等的情况要注意
                 rightIndex = midInex
             } else if numbers[midInex] >= numbers[midInex]{
                 leftIndex = midInex
             }
         }
         return numbers[midInex]
+    }
+}
+
+extension Solution {
+    // 剑指 Offer 12. 矩阵中的路径
+    // https://leetcode-cn.com/problems/ju-zhen-zhong-de-lu-jing-lcof/
+    // 给定一个 m x n 二维字符网格 board 和一个字符串单词 word 。如果 word 存在于网格中，返回 true ；否则，返回 false
+    func exist(_ board: [[Character]], _ word: String) -> Bool { // 深度优先搜索法(递归法,回溯法)
+        
+        func getCharacter(lIndex:Int,letter:String) -> Character {
+            let index = letter.index(letter.startIndex, offsetBy: lIndex)
+            return letter[index]
+        }
+        
+        func findLetter(iV:Int,jV:Int,lIndex:Int,letter:String,array:[[Character]],usedArr: inout [[Int]]) -> Bool {
+            let char:Character = getCharacter(lIndex: lIndex, letter: letter)
+            if char != array[iV][jV] {
+                return false
+            }
+            if lIndex == letter.count - 1 {
+                return true
+            }
+            usedArr[iV][jV] = 1
+            // 这里取所有可能的结果的并集
+            if iV - 1 >= 0 ,usedArr[iV - 1][jV] == 0 {
+                if findLetter(iV: iV - 1, jV: jV, lIndex: lIndex + 1, letter: letter, array: array, usedArr: &usedArr) {
+                    return true
+                }
+            }
+            if iV + 1 < array.count, usedArr[iV + 1][jV] == 0 {
+                if  findLetter(iV: iV + 1, jV: jV, lIndex: lIndex + 1, letter: letter, array: array, usedArr: &usedArr) {
+                    return true
+                }
+            }
+            if jV - 1 >= 0 , usedArr[iV][jV - 1] == 0 {
+                if  findLetter(iV: iV , jV: jV - 1, lIndex: lIndex + 1, letter: letter, array: array, usedArr: &usedArr) {
+                    return true
+                }
+            }
+            if jV + 1 < array[0].count,usedArr[iV][jV + 1] == 0 {
+                if  findLetter(iV: iV , jV: jV + 1, lIndex: lIndex + 1, letter: letter, array: array, usedArr: &usedArr) {
+                    return true
+                }
+            }
+            // 递归时,要注意及时清理当前递归分支污染的公共数组
+            usedArr[iV][jV] = 0
+            return false
+        }
+        // 寻找字符串的路径
+        var usedArr = Array.init(repeating: Array.init(repeating: 0, count: board[0].count), count: board.count)
+        for i in 0 ..< board.count {
+            for j in 0 ..< board[0].count {
+                if findLetter(iV: i, jV: j, lIndex: 0, letter: word, array: board, usedArr: &usedArr) {
+                    return true
+                }
+            }
+        }
+        return false
     }
 }
 

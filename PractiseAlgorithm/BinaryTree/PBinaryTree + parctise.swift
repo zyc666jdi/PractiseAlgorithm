@@ -182,6 +182,9 @@ func testSpiralOrder(){
 }
 
 func testPractiseNumber(){
-    Solution.init().minArray([3,3,1,3])
+    Solution.init().exist([["C","A","A"],["A","A","A"],["B","C","D"]], "AAB")
 }
+
+
+
 
