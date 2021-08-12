@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		7B19AB76261E7F8F0044F40D /* PBinaryTree + traversal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B19AB75261E7F8F0044F40D /* PBinaryTree + traversal.swift */; };
-		7B19AB7A261FC5A60044F40D /* PBinaryTree + parctise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B19AB79261FC5A60044F40D /* PBinaryTree + parctise.swift */; };
 		7B19AB7E2623CEF30044F40D /* PBinaryTree + leetcode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B19AB7D2623CEF30044F40D /* PBinaryTree + leetcode.swift */; };
 		7B19AB822634E7EA0044F40D /* PBinaryTree + leetcode2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B19AB812634E7EA0044F40D /* PBinaryTree + leetcode2.swift */; };
 		7B19ABC4265881780044F40D /* PTreeNode + print.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B19ABC3265881780044F40D /* PTreeNode + print.swift */; };
@@ -49,7 +48,6 @@
 
 /* Begin PBXFileReference section */
 		7B19AB75261E7F8F0044F40D /* PBinaryTree + traversal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PBinaryTree + traversal.swift"; sourceTree = "<group>"; };
-		7B19AB79261FC5A60044F40D /* PBinaryTree + parctise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PBinaryTree + parctise.swift"; sourceTree = "<group>"; };
 		7B19AB7D2623CEF30044F40D /* PBinaryTree + leetcode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PBinaryTree + leetcode.swift"; sourceTree = "<group>"; };
 		7B19AB812634E7EA0044F40D /* PBinaryTree + leetcode2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PBinaryTree + leetcode2.swift"; sourceTree = "<group>"; };
 		7B19ABC3265881780044F40D /* PTreeNode + print.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PTreeNode + print.swift"; sourceTree = "<group>"; };
@@ -170,7 +168,6 @@
 				7B19AB75261E7F8F0044F40D /* PBinaryTree + traversal.swift */,
 				7B19AB7D2623CEF30044F40D /* PBinaryTree + leetcode.swift */,
 				7B19AB812634E7EA0044F40D /* PBinaryTree + leetcode2.swift */,
-				7B19AB79261FC5A60044F40D /* PBinaryTree + parctise.swift */,
 				7B19ABC3265881780044F40D /* PTreeNode + print.swift */,
 				7B19ABC9265F10E80044F40D /* PTreeNode + AVL.swift */,
 				7B8A118426774F0E00635694 /* PTreeNode + BinarySearch.swift */,
@@ -353,7 +350,6 @@
 			files = (
 				7B19AB76261E7F8F0044F40D /* PBinaryTree + traversal.swift in Sources */,
 				7B7B253826B0C35800119830 /* PNumber.swift in Sources */,
-				7B19AB7A261FC5A60044F40D /* PBinaryTree + parctise.swift in Sources */,
 				B7DC12FE23A9EE81006DCF9B /* PractiseSort.swift in Sources */,
 				7B367183260ABF0300C71401 /* PBinaryTree.swift in Sources */,
 				7B36717F26062B6700C71401 /* PStack.swift in Sources */,

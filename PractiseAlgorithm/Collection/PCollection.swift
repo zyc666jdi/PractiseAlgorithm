@@ -166,3 +166,52 @@ extension Solution {
     }
 }
 
+extension Solution {
+    // 剑指 Offer 13. 机器人的运动范围
+    // https://leetcode-cn.com/problems/ji-qi-ren-de-yun-dong-fan-wei-lcof/
+    // 地上有一个m行n列的方格，从坐标 [0,0] 到坐标 [m-1,n-1] 。一个机器人从坐标 [0, 0] 的格子开始移动，它每次可以向左、右、上、下移动一格（不能移动到方格外,请问该机器人能够到达多少个格子？
+    func movingCount(_ m: Int, _ n: Int, _ k: Int) -> Int { // 思路同12
+        
+        func canLocationIfNeed(i:Int,j:Int,m:Int,n:Int,k:Int,arr:inout [[Int]]){
+            if i < 0 || i >= m ||  j < 0 || j >= n { // 越界
+                return
+            }
+            if arr[i][j] != 0 { // 走过
+                return
+            }
+            var num:Int = 0
+            var iV = i
+            var jV = j
+            while iV > 0{
+                num += iV % 10
+                iV = iV / 10
+            }
+            while jV > 0 {
+                num += jV % 10
+                jV = jV / 10
+            }
+            if num > k {
+                arr[i][j] = -1
+                return
+            }
+            arr[i][j] = 1
+            //
+            canLocationIfNeed(i: i - 1, j: j, m: m, n: n, k: k, arr: &arr)
+            canLocationIfNeed(i: i + 1, j: j, m: m, n: n, k: k, arr: &arr)
+            canLocationIfNeed(i: i , j: j - 1, m: m, n: n, k: k, arr: &arr)
+            canLocationIfNeed(i: i, j: j + 1, m: m, n: n, k: k, arr: &arr)
+        }
+        // 0:未走过 1:可用 -1:不可用
+        var arr:[[Int]] = Array.init(repeating: Array.init(repeating: 0, count: n), count: m)
+        canLocationIfNeed(i: 0, j: 0, m: m, n: n, k: k, arr: &arr)
+        var result:Int = 0
+        for i in 0 ..< arr.count {
+            for j in 0 ..< arr[i].count {
+                if arr[i][j] == 1 {
+                    result += 1
+                }
+            }
+        }
+        return result
+    }
+}

@@ -12,35 +12,9 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-       
-//        PractiseSort()
         
-//        PractiseFind()
-        
-//        practiseString()
-        
-//        PractiseValue()
-        
-//        PractiseNumber()
-        
-//        let _ = practiseListNode()
-//
-//        let _ = PractiseBinaryTree()
-//
-//        let _ = PractiseStack()
-//
-//        let _ = PractiseMatrix()
-        
-//        testLevelOrder()
-//        let _ = testPostorderTraversalLeetcode2()
-//        let _ = testPostorderMirrosLeetcode1()
-        //let _ = testConstructFromPrePostRecursion()
-//            testPrint()
-//        testGetMinimumDifference()
-//        testSortedArrayToBST()
-//        testGetLeastNumbers()
-//        testSpiralOrder()
-        testPractiseNumber()
+        let solution = Solution()
+        solution.movingCount(7, 2, 3)
     }
     
 
