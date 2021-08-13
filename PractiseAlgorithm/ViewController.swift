@@ -14,7 +14,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         let solution = Solution()
-        solution.cuttingRope(2)
+        solution.cuttingRope2(120)
     }
     
 

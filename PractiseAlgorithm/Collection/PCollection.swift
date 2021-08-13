@@ -244,3 +244,49 @@ extension Solution {
     }
 }
 
+extension Solution {
+    // 剑指 Offer 14- II. 剪绳子 II
+    // https://leetcode-cn.com/problems/jian-sheng-zi-ii-lcof/
+    // 给你一根长度为 n 的绳子，请把绳子剪成整数长度的 m 段（m、n都是整数，n>1并且m>1），每段绳子的长度记为 k[0],k[1]...k[m - 1] 。请问 k[0]*k[1]*...*k[m - 1] 可能的最大乘积是多少？答案需要取模 1e9+7（1000000007），如计算初始结果为：1000000008，请返回 1。
+    
+    func cuttingRope2(_ n: Int) -> Int { // 贪婪算法 尽可能剪去n = 3 的片段 (由上题的动态规划的数组中可以得到规律)
+        // 分割比不分割小
+        if n == 0 || n == 1 {
+            return 0
+        } else if n == 2 {
+            return 1
+        } else if n == 3 {
+            return 2
+        }
+        // 分割比不分割大
+        var letterCountOf3:Int = n / 3
+        var letterCountOf2:Int = 0
+        if n % 3 == 1 {
+            letterCountOf3 -= 1
+            letterCountOf2 = 2
+        } else if n % 3 == 2 {
+            letterCountOf2 = 1
+        }
+        // n = 120 ,result = 4052555153018976267时,再乘 3 数字会溢出
+        var result:Int = 1
+        while letterCountOf3 > 0 {
+            result = result * 3
+            if result > 1000000007 {
+                result = result % 1000000007
+            }
+            letterCountOf3 -= 1
+        }
+        if letterCountOf2 == 1 {
+            result = result * 2
+            if result > 1000000007 {
+                result = result % 1000000007
+            }
+        } else if letterCountOf2 == 2 {
+            result = result * 2 * 2
+            if result > 1000000007 {
+                result = result % 1000000007
+            }
+        }
+        return result
+    }
+}
