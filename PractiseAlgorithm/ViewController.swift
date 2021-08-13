@@ -14,7 +14,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         let solution = Solution()
-        solution.movingCount(7, 2, 3)
+        solution.cuttingRope(2)
     }
     
 

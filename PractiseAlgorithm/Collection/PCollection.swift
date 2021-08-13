@@ -209,3 +209,38 @@ extension Solution {
         return totalCount
     }
 }
+
+extension Solution {
+    // 剑指 Offer 14- I. 剪绳子
+    // https://leetcode-cn.com/problems/jian-sheng-zi-lcof/
+    // 给你一根长度为 n 的绳子，请把绳子剪成整数长度的 m 段（m、n都是整数，n>1并且m>1），每段绳子的长度记为 k[0],k[1]...k[m-1] 。请问 k[0]*k[1]*...*k[m-1] 可能的最大乘积是多少？
+    func cuttingRope(_ n: Int) -> Int { // 动态规划(递归反过来)
+        
+        // 把一段长度为n的子绳子剪多段或不剪的最大值
+        func getSubRopeMaxCount(n: Int) -> Int{
+            var arr:[Int] = Array.init(repeating: 0, count: n + 1) // 长度为n的绳子的最大结果
+            arr[0] = 0
+            arr[1] = 1
+            arr[2] = 2
+            arr[3] = 3
+            for i in 4 ... n {
+                var maxCount:Int = 0
+                for j in 0 ... i / 2 {
+                    let tmp = arr[j] * arr[i - j]
+                    maxCount = max(maxCount, tmp)
+                }
+                arr[i] = maxCount
+            }
+            return arr[n]
+        }
+        if n == 2 {
+            return 1
+        } else if n == 3 {
+            return 2
+        }
+        // 对于 n >= 4 的绳子
+        let result = getSubRopeMaxCount(n: n)
+        return result
+    }
+}
+
