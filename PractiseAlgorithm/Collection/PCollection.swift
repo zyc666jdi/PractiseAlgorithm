@@ -324,5 +324,36 @@ class MinStack {  // 注意与最小堆问题的却别
     }
 }
 
-
+extension Solution {
+    // 剑指 Offer 31. 栈的压入、弹出序列
+    // https://leetcode-cn.com/problems/zhan-de-ya-ru-dan-chu-xu-lie-lcof/
+    // 输入两个整数序列，第一个序列表示栈的压入顺序，请判断第二个序列是否为该栈的弹出顺序。假设压入栈的所有数字均不相等。
+    
+    func validateStackSequences(_ pushed: [Int], _ popped: [Int]) -> Bool {
+        var stack:[Int] = []
+        var popIndex:Int = 0
+        for i in 0 ..< pushed.count {
+            if pushed[i] == popped[popIndex] {
+                popIndex += 1
+                // pop
+                while popIndex < popped.count,stack.count > 0 {
+                    if stack.last == popped[popIndex] {
+                        stack.removeLast()
+                        popIndex += 1
+                    } else {
+                       break
+                    }
+                }
+            } else {
+                // push
+                stack.append(pushed[i])
+            }
+        }
+        if stack.count > 0 {
+            return false
+        }
+        return true
+        
+    }
+}
 
