@@ -290,3 +290,39 @@ extension Solution {
         return result
     }
 }
+
+// 剑指 Offer 30. 包含min函数的栈
+// https://leetcode-cn.com/problems/bao-han-minhan-shu-de-zhan-lcof/
+// 定义栈的数据结构，请在该类型中实现一个能够得到栈的最小元素的 min 函数在该栈中，调用 min、push 及 pop 的时间复杂度都是 O(1)。
+class MinStack {  // 注意与最小堆问题的却别
+    var storeArr:[Int]  = []
+    var sortArr:[Int] = []
+    
+    init() {
+    }
+    
+    func push(_ x: Int) { // 每次将当前的最小值亚乳栈
+        self.storeArr.append(x)
+        if sortArr.count > 0 ,let last = sortArr.last ,last < x {
+            sortArr.append(last)
+        } else {
+            sortArr.append(x)
+        }
+    }
+    
+    func pop() {
+        self.storeArr.removeLast()
+        self.sortArr.removeLast()
+    }
+    
+    func top() -> Int {
+        return storeArr.last ?? 0
+    }
+    
+    func min() -> Int {
+        return sortArr.last ?? 0
+    }
+}
+
+
+
