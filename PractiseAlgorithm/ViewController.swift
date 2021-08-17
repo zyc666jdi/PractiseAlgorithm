@@ -14,7 +14,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         let solution = Solution()
-        solution.cuttingRope2(120)
+        solution.permutation("vpvptjzh")
     }
     
 

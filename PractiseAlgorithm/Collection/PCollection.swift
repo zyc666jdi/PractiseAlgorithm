@@ -357,3 +357,43 @@ extension Solution {
     }
 }
 
+extension Solution {
+    
+    // 剑指 Offer 38. 字符串的排列
+    // https://leetcode-cn.com/problems/zi-fu-chuan-de-pai-lie-lcof/
+    // 输入一个字符串，打印出该字符串中字符的所有排列。
+    func permutation(_ s: String) -> [String] {
+        
+        // 将字符串看做数组
+        // 将大数组分为1个元素 和 剩下元素的全排列组成的小数组,使查找的范围缩小
+        func permutationCore(current:[Character],left:[Character],arr:inout [String]) {
+            if left.count == 0 {
+                var str:String = ""
+                for char in current {
+                    str.append(char)
+                }
+                arr.append(str)
+                return
+            }
+            var used:[Character] = []
+            for (i,ele) in left.enumerated() {
+                if !used.contains(ele) {
+                    var dscCurrent = current
+                    dscCurrent.append(ele)
+                    var dscLeft = left
+                    dscLeft.remove(at: i)
+                    permutationCore(current: dscCurrent, left: dscLeft, arr: &arr)
+                    used.append(ele)
+                }
+            }
+        }
+        //
+        var arr:[String] = []
+        let current = s.map{$0}
+        permutationCore(current: [], left: current, arr: &arr)
+        return arr
+    }
+    
+    
+}
+
